@@ -22,17 +22,8 @@
         <td class="comments-count">
           コメント数：<%= book.book_comments.count %>
         </td>
-        <td class="rate_star" data-score="<%= book.rate %>"></td>
+        <td><%= render "books/static_rate", book: book %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<script>
-  $('.rate_star').raty({
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score');
-    },
-    path: '/assets/'
-  });
-</script>
